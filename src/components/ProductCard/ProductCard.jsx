@@ -4,16 +4,13 @@ import "./ProductCard.css"
 
 const ProductCard = ({producto}) => {
     return (
-        <div className="contenedor-principal">
-        <div>
+        <div className="contenedor">
             <h3>{producto.imagen}</h3>
-            <h3>{producto.categoria}</h3>
-            <h2>{producto.nombre}</h2>
-            <h3>${producto.precio}</h3>
+            <span className="cat">{producto.categoria}</span>
+            <h2 className="nombre">{producto.nombre}</h2>
+            <h2 className="precio">${producto.precio}</h2>
             {/* <p>{producto.descripcion}</p> */}
-            <Link to={"/detail/" + producto.id}>Ver detalle</Link>
-        <hr />
-        </div>
+            <Link to={"/detail/" + producto.id} className="detalle"> Ver detalle</Link>
         </div>
     )
 }

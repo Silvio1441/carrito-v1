@@ -1,13 +1,14 @@
 import React from 'react'
 import { useCustomContext } from '../../ContextManager/ContextProvider'
 import { ProductCard, ProductCartCard } from '../../components';
+import "./CartPage"
 
 const CartPage = () => {
     const {cart, getTotal} = useCustomContext()
     console.log(getTotal);
   return (
-    <div>
-        CartPage
+    <div className='cart'>
+        {/* CartPage */}
         <div>
             {
                 cart.map(product => (
@@ -15,7 +16,8 @@ const CartPage = () => {
                 ))
             }
         </div>
-        Total: {getTotal()}
+        <h1>Total: {getTotal()}</h1>
+        <button className='btn-cart'>Comprar</button>
     </div>
   )
 }
